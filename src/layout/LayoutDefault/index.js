@@ -6,6 +6,7 @@ import "./LayoutDefault.css"
 import logo from '../../../src/images/logo.png'
 import logoFold from '../../../src/images/logo-fold.png'
 import {useState} from "react";
+import Notify from "../../components/Notify";
 
 const {Sider, Content, Footer} = Layout;
 
@@ -28,7 +29,7 @@ function LayoutDefault() {
 
                     </div>
                     <div className="header__nav-right">
-                        noi dung
+                       <Notify/>
                     </div>
 
                 </div>
