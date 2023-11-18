@@ -1,6 +1,6 @@
 import {Menu} from "antd";
 import {UpOutlined,FastBackwardOutlined,ArrowsAltOutlined} from '@ant-design/icons'
-
+import {Link} from 'react-router-dom'
 function MenuSider(){
     const items =[
         {
@@ -10,8 +10,8 @@ function MenuSider(){
         //     tao menu con trong menu chinh dung key la children
             children: [
                 {
-                    label: "menu 1-1",
-                    key: "menu-1-1",
+                    label: <Link to='/'>dashboard</Link>,
+                    key: '/',
                 },
                 {
                     label: "menu 1-2",
@@ -48,6 +48,11 @@ function MenuSider(){
             key: "menu-3",
             icon: <ArrowsAltOutlined />
         },
+        {
+            label: <Link to='/book-room'>book-room</Link>,
+            key: "book-room",
+            icon: <ArrowsAltOutlined />
+        },
     ];
 
 
@@ -56,7 +61,7 @@ function MenuSider(){
         <>
             <Menu
                 mode="inline"
-                items={items} defaultSelectedKeys={['menu-1-1']} defaultOpenKeys={['menu-1']}
+                items={items} defaultSelectedKeys={['/']} defaultOpenKeys={['menu-1']}
             />
 
         </>
