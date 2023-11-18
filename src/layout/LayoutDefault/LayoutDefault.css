@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.header__logo {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #e32b2b;
+    transition: all 0.2s;
+/*    do header mình đang để là display: flex, nên hai thằng heaer__logo và header__nav nó dang có chiều rộng
+mặc định, giờ muốn cho cái header__nav kia chiếm hết chiều rộng còn lại thì sử dụng flex: 1
+*/
+
+}
+.header__logo--collapsed {
+    width: 80px;
+    transition: all 0.2s;
+
+}
+
+.header__nav {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+
+}
+.header__nav-left {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+.header__collapse {
+    margin-right: 20px;
+    cursor: pointer;
+}
+.content {
+    padding:20px ;
+}
