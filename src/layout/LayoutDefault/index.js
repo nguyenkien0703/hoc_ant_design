@@ -7,6 +7,7 @@ import logo from '../../../src/images/logo.png'
 import logoFold from '../../../src/images/logo-fold.png'
 import {useState} from "react";
 import Notify from "../../components/Notify";
+import MenuSider from "../../components/MenuSider";
 
 const {Sider, Content, Footer} = Layout;
 
@@ -35,7 +36,9 @@ function LayoutDefault() {
                 </div>
             </header>
             <Layout>
-                <Sider className="sider" collapsed={collapsed} theme="light">sider</Sider>
+                <Sider className="sider" collapsed={collapsed} theme="light">
+                    <MenuSider/>
+                </Sider>
                 <Content className="content">
                     <LearnGrid/>
                 </Content>
