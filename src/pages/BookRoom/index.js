@@ -1,10 +1,21 @@
-import {Button, Checkbox, Col, DatePicker, Input, Radio, Row, Space} from "antd";
+import {Button, Checkbox, Col, DatePicker, Input, Radio, Row, Select, Space} from "antd";
 import {useState} from "react";
 
 const {RangePicker} = DatePicker;
 
 function BookRoom() {
-    const [data, setData] = useState({});
+    const [data, setData] = useState({
+        time: "14 gio",
+    });
+
+    const optionsTimes = [];
+    for (let i = 7; i <= 24; i++) {
+        optionsTimes.push({
+            value: i > 9 ? `${i} gio` : `0${i} gio`, label: i > 9 ? `${i} gio` : `0${i} gio`,
+        })
+    }
+
+
     const handleChangeInput = (e) => {
         const object = {
             ...data, [e.target.name]: e.target.value
@@ -27,6 +38,13 @@ function BookRoom() {
         }
         setData(object);
     }
+    const handleChangeSelect = (e) => {
+        const object = {
+            ...data, time: e
+        }
+        setData(object);
+    }
+
 
     return (<>
         <h2>dat phong</h2>
@@ -54,14 +72,6 @@ function BookRoom() {
                 </Checkbox.Group>
 
             </Col>
-
-            <Col span={12}>
-                <p>chọn ngày</p>
-                <RangePicker placeholder={['nhan phong', 'tra phong']} format="DD-MM-YYYY" onChange={handleChangeDate}/>
-
-
-            </Col>
-
             <Col span={12}>
                 <p>quà tặng</p>
                 <Radio.Group name="gift">
@@ -71,6 +81,20 @@ function BookRoom() {
                         <Radio value="kem chong nang">kem chong nang</Radio>
                     </Space>
                 </Radio.Group>
+
+            </Col>
+
+            <Col span={12}>
+                <p>chọn ngày</p>
+                <RangePicker placeholder={['nhan phong', 'tra phong']} format="DD-MM-YYYY" onChange={handleChangeDate}/>
+
+
+            </Col>
+
+            <Col span={12}>
+                <p>giờ nhận phòng</p>
+                <Select style={{width: "100%"}} defaultValue={data.time} onChange={handleChangeSelect}
+                        options={optionsTimes}/>
 
             </Col>
 
