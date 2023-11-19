@@ -1,5 +1,6 @@
 import {Button, Checkbox, Col, DatePicker, Input, Radio, Row, Select, Space} from "antd";
 import {useState} from "react";
+import {bookRoom} from "../../service/bookRoomService";
 
 const {RangePicker} = DatePicker;
 
@@ -23,8 +24,14 @@ function BookRoom() {
         setData(object);
     }
 
-    const handleSubmit = () => {
-        console.log('data', data)
+    const handleSubmit = async () => {
+        const response = await bookRoom(data);
+        if(response){
+            alert('chuc mung ban da dat phong thanh cong')
+        }else {
+            alert('xin loi vui long dat lai sau')
+        }
+
     }
     const handleChangeCheckbox = (e) => {
         const object = {
