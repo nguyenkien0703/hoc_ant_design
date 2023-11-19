@@ -60,7 +60,7 @@ function BookRoom() {
 
             <Col span={12}>
                 <p>chọn ngày</p>
-                <RangePicker onChange={handleChangeDate}/>
+                <RangePicker placeholder={['nhan phong','tra phong']}  format="DD-MM-YYYY"  onChange={handleChangeDate}/>
 
 
             </Col>
