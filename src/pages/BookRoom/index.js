@@ -1,6 +1,8 @@
-import {Button, Col, Input, Row, Space} from "antd";
+import {Button, Col, DatePicker, Input, Row, Space} from "antd";
 import {useState} from "react";
 import {Checkbox} from 'antd'
+
+const {RangePicker} = DatePicker;
 
 function BookRoom() {
     const [data, setData] = useState({});
@@ -20,6 +22,14 @@ function BookRoom() {
         }
         setData(object);
     }
+    const handleChangeDate = (dates, dateStrings) => {
+        const object = {
+            ...data,
+            date: dateStrings
+        }
+        setData(object);
+    }
+
 
     return (<>
         <h2>dat phong</h2>
@@ -47,6 +57,15 @@ function BookRoom() {
                 </Checkbox.Group>
 
             </Col>
+
+            <Col span={12}>
+                <p>chọn ngày</p>
+                <RangePicker onChange={handleChangeDate}/>
+
+
+            </Col>
+
+
             <Col span={24}>
                 <Button type='primary' onClick={handleSubmit}>submit</Button>
             </Col>
