@@ -1,6 +1,7 @@
 import {Menu} from "antd";
-import {UpOutlined,FastBackwardOutlined,ArrowsAltOutlined} from '@ant-design/icons'
+import {ArrowsAltOutlined, FastBackwardOutlined, UpOutlined} from '@ant-design/icons'
 import {Link} from 'react-router-dom'
+
 function MenuSider(){
     const items =[
         {
