@@ -54,6 +54,11 @@ function MenuSider(){
             key: "book-room",
             icon: <ArrowsAltOutlined />
         },
+        {
+            label: <Link to='/create-room'>create-room</Link>,
+            key: "create-room",
+            icon: <ArrowsAltOutlined />
+        },
     ];
 
 

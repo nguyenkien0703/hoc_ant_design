@@ -32,7 +32,6 @@ function LayoutDefault() {
                     <div className="header__nav-right">
                        <Notify/>
                     </div>
-
                 </div>
             </header>
             <Layout>
