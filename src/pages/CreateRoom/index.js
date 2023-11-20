@@ -1,20 +1,26 @@
 import {Button, Form, Input, InputNumber, Select, Switch} from "antd";
+import {createRoom} from "../../service/roomService";
 
 const {Option} = Select;
 
 function CreateRoom() {
+    const [form] = Form.useForm();
     const rules = [{
         required: true, message: 'bat buoc',
     },];
 
-    const handleSubmit = (e) => {
-        console.log(e)
+    const handleSubmit = async (e) => {
+        const response = await createRoom(e);
+        console.log(response);
+        if(response){
+            form.resetFields();
+        }
     }
 
 
     return (<>
         <h2>them phong moi</h2>
-        <Form layout="vertical" name='create-room' onFinish={handleSubmit}>
+        <Form layout="vertical" name='create-room' onFinish={handleSubmit}  form={form}>
             <Form.Item
                 label="ten phong"
                 name="name"
